@@ -50,13 +50,14 @@ const operations = ['/', '*', '-', '+']
 function calculate(newNumber){
     let result = null;
     let screenSplit = newNumber.split(/(\d*\.*\d*)/).filter(Boolean);
-    // console.log(screenSplit);
+    console.log(screenSplit);
     let lastOperation = null;
     let first_iteration = true;
     for (i of screenSplit){
         console.log('i: '+i);
         if (operations.includes(i)){
             lastOperation = i
+            first_iteration = false;
         }else{
             if (first_iteration){
                 result = parseFloat(i);
